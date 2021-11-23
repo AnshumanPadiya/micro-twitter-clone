@@ -1,0 +1,6 @@
+for Authentication
+passport authentication library
+passport-local  strategy (it takes username and password to authenticate the user)
+passport-local-mongoose   stores user information and stores password in hashed format 
+                it will automatically  add username and password in your database as Schema without us having do
+                it manually.

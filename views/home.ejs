@@ -1,0 +1,33 @@
+<%- include("./partials/header.ejs") %>
+      <link rel="stylesheet" href="/css/main.css">
+      
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            
+            <%- include("./partials/navbar") %>
+            
+            <div class="main-content-container col-10 col-md-8 col-lg-6">
+                <h1 class="fw-bold titleContainer">Home</h1>
+                <%- include('./partials/modal.ejs')%>
+                <div class="mb-3 postContainer">
+                    <div class="userImageContainer">
+                        <img src="/images/profilePic.jpeg" alt="User Profile">
+                    </div>                    
+                    <div class="textareaContainer">                        
+                            <textarea id="post-text" name="" id="" cols="30" rows="3" placeholder="What's happening?"></textarea>
+                            <button id="submitPostButton" type="submit">Post</button>                      
+                    </div>
+                </div>
+                <div>
+                    <div class="postsContainer"></div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/common.js"></script>
+<%- include("./partials/footer.ejs") %>
