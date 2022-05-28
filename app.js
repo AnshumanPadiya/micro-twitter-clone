@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
@@ -34,6 +35,7 @@ app.set('views', path.join(__dirname, '/views'));
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(morgan('dev'));
 
 // routes
 const authRoutes = require('./routes/authRoutes');
@@ -47,7 +49,7 @@ const { profile } = require('console');
 const { emit } = require('./models/user');
 
 app.use(session({
-    secret: 'weneedabettersecret',
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true
 }))
